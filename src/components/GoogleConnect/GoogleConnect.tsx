@@ -6,6 +6,7 @@ import { jwtDecode } from "jwt-decode";
 export const GoogleConnect: React.FC = () => {
   return (
     <GoogleLogin
+      type="icon"
       onSuccess={(credentialResponse) => {
         const credential = jwtDecode(credentialResponse.credential)
         console.log(credential.email);

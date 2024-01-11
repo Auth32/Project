@@ -1,17 +1,20 @@
 import React from 'react'
 import { useConnectWallet } from '@web3-onboard/react'
-import { APP_CONFIG } from "../../app.config";
+import { ShortButton } from "../ShortButton";
+import ethereumIcon from "./ethereumIcon.svg";
 
 export const EthereumConnect: React.FC = () => {
-  const [{wallet, connecting}, connect, disconnect] = useConnectWallet()
+  const [{wallet}, connect, disconnect] = useConnectWallet()
+
+  const connectWallet = () => {
+    return wallet ? disconnect(wallet) : connect()
+  }
 
   return (
-    <button
-      disabled={connecting}
-      style={APP_CONFIG.buttonTheme}
-      onClick={() => (wallet ? disconnect(wallet) : connect())}>
-      {connecting ? 'connecting' : wallet ? 'Disconnect' : 'Connect'}
-    </button>
+    <ShortButton
+      connectFunction={() => connectWallet}
+      buttonIcon={ethereumIcon}
+    />
   );
 }
 

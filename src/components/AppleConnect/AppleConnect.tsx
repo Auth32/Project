@@ -1,6 +1,10 @@
 import React from "react";
-import AppleLogin from 'react-apple-login'
+import AppleLogin from 'react-apple-login';
 import { APP_CONFIG } from "../../app.config";
+import { Box } from '@mui/material';
+import AppleIcon from './apple-logo.svg';
+import { ShortButton } from "../ShortButton/ShortButton";
+
 
 
 export const AppleConnect = () => {
@@ -17,14 +21,8 @@ export const AppleConnect = () => {
       onFailure={(error) => {
         console.log({error});
       }}
-      render={renderProps => (  //Custom Apple Sign in Button
-        <button
-          onClick={renderProps.onClick}
-          style={APP_CONFIG.buttonTheme}
-        >
-          <i className="fa-brands fa-apple px-2 "></i>
-          Continue with Apple
-        </button>
+      render={renderProps => (
+        <ShortButton connectFunction={() => renderProps.onClick} buttonIcon={AppleIcon}/>
       )}
     />
   );
