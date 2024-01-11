@@ -18,6 +18,8 @@ export const APP_CONFIG = {
     },
     apple: {
       id: ""
+    },
+    twitter: {
+      id: ""
     }
-
 }
