@@ -29,6 +29,7 @@
     "react-apple-login": "^1.1.6",
     "react-facebook-login": "^4.1.1",
     "react-twitter-auth": "^0.0.13",
+    "react-twitter-oauth": "^1.0.1",
     "storybook": "^7.6.7",
     "vite": "^5.0.11",
     "web3-react": "^5.0.5"

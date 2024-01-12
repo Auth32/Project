@@ -14,5 +14,9 @@ export default meta;
 type Story = StoryObj<typeof TwitterConnect>;
 
 export const Primary: (args) => JSX.Element = (args) => (
-  <TwitterConnect/>
+  <TwitterConnect onLoginSuccess={function (response: any): void {
+    throw new Error("Function not implemented.");
+  } } onLoginFailure={function (error: any): void {
+    throw new Error("Function not implemented.");
+  } }/>
 );
